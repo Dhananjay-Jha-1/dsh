@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+
 #include "shell.h"
+#include "parser.h"
 
 void start_shell(void)
 {
@@ -12,7 +14,7 @@ void start_shell(void)
 
         fgets(input, sizeof(input), stdin);
 
-        //now fgets also store the \n character i will have to remove it
+        //now fgets also store the '\n' character i will have to remove it
 
         int n = strlen(input);
 
@@ -25,6 +27,6 @@ void start_shell(void)
             }
         }
 
-        printf("You typed : %s\n", input);
+        parse_input(input);
     }
 }
