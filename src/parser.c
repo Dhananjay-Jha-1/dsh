@@ -2,19 +2,8 @@
 
 #include "parser.h"
 
-/**************************************
-void print_token(char* argv[], int argc)
-{
-    for(int i = 0; i < argc; i++)
-    {
-        printf("Token %d : %s\n", i, argv[i]); 
-    }
-}
-*****************************************/
-
 //toh ab krna kuch aisa h ki parse_input() function ka argv executor.c me dena h
 // how do I do it, now?
-
 
 int parse_input(char* input, char* argv[])
 {
@@ -44,11 +33,10 @@ int parse_input(char* input, char* argv[])
         while(input[i] == ' ')
         {
             input[i] = '\0';
-	    i++;
+	        i++;
         }
     }
     argv[argc] = NULL;
     
     return argc;
-    //print_token(argv, argc);    
 }
