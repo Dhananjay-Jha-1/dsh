@@ -15,10 +15,13 @@ void start_shell(void)
         // prompt to wait for user input
         printf("dash> ");
 
-        fgets(input, sizeof(input), stdin);
+        // handling CTRL + D 
+        if(fgets(input, sizeof(input), stdin) == NULL)
+        {
+            break;
+        }
 
         //now fgets also store the '\n' character i will have to remove it
-
         int n = strlen(input);
 
         for(int i = 0; i < n; i++)
@@ -29,7 +32,6 @@ void start_shell(void)
                 break;
             }
         }
-
         parse_input(input, argv);
 
         execute(argv);        
