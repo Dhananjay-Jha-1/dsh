@@ -13,7 +13,8 @@ void start_shell(void)
     while(1)
     {
         // prompt to wait for user input
-        printf("dash> ");
+        printf("dsh> ");
+        fflush(stdout);
 
         // handling CTRL + D 
         if(fgets(input, sizeof(input), stdin) == NULL)
@@ -32,8 +33,8 @@ void start_shell(void)
                 break;
             }
         }
-        parse_input(input, argv);
-
-        execute(argv);        
+        int argc = parse_input(input, argv);
+        
+        execute(argc, argv);
     }
 }

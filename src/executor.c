@@ -1,12 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 #include "executor.h"
 
-//first let's check by printing if it works at all
-void execute(char* argv[])
+int execute(int argc, char* argv[])
 {
-    for(int i = 0; argv[i] != NULL; i++)
+    /*for(int i = 0; argv[i] != NULL; i++)
     {
         printf("Token %d : %s\n", i, argv[i]);
     }
+    printf("The number of tokens are : %d\n", argc);*/
+    
+    pid_t pid;
+    pid = fork();
+
+    if(pid == -1)
+    {
+        perror("fork failed");
+        return -1;
+    }
+    else if(pid > 0)
+    {
+        //parent process
+        waitpid(pid, NULL, 0);
+    }
+    else 
+    {
+        //child process when pid = 0
+        execvp(argv[0], argv);
+
+        perror("command");
+        exit(EXIT_FAILURE);
+    }
+
+    return argc;
 }
+
+

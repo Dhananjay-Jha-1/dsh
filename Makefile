@@ -6,7 +6,7 @@ SRC = src/main.c src/shell.c src/parser.c src/executor.c
 
 OBJ = build/main.o build/shell.o build/parser.o build/executor.o
 
-OUT = build/dash
+OUT = build/dsh
 
 #build build/dash first
 all: $(OUT)
@@ -28,4 +28,4 @@ build/executor.o: src/executor.c
 	$(CC) $(CFLAGS) -c src/executor.c -o build/executor.o
 
 clean:
-	rm -f build/*.o build/dash
+	rm -f build/*.o build/dsh

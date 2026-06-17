@@ -1,9 +1,5 @@
 #include <stdio.h>
-
 #include "parser.h"
-
-//toh ab krna kuch aisa h ki parse_input() function ka argv executor.c me dena h
-// how do I do it, now?
 
 int parse_input(char* input, char* argv[])
 {
@@ -37,6 +33,6 @@ int parse_input(char* input, char* argv[])
         }
     }
     argv[argc] = NULL;
-    
+
     return argc;
 }
