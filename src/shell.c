@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "shell.h"
+#include "builtins.h"
 #include "parser.h"
 #include "executor.h"
 
@@ -35,6 +36,11 @@ void start_shell(void)
         }
         int argc = parse_input(input, argv);
         
-        execute(argc, argv);
+        if(argc == 0)
+            continue;
+        if(is_builtin(argv))
+            exec_builtin(argv);
+        else
+            execute(argc, argv);
     }
 }
