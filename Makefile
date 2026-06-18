@@ -2,9 +2,9 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Iinclude
 
-SRC = src/main.c src/shell.c src/parser.c src/executor.c
+SRC = src/main.c src/shell.c src/parser.c src/executor.c src/builtins.c
 
-OBJ = build/main.o build/shell.o build/parser.o build/executor.o
+OBJ = build/main.o build/shell.o build/parser.o build/executor.o build/builtins.o
 
 OUT = build/dsh
 
@@ -26,6 +26,9 @@ build/parser.o: src/parser.c
 
 build/executor.o: src/executor.c
 	$(CC) $(CFLAGS) -c src/executor.c -o build/executor.o
+
+build/builtins.o: src/builtins.c
+	$(CC) $(CFLAGS) -c src/builtins.c -o build/builtins.o
 
 clean:
 	rm -f build/*.o build/dsh
