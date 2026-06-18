@@ -15,7 +15,9 @@ A simple UNIX shell written in C.
   * `cd ~`
   * `exit`
   * `fuckoff`
+
 * Basic error handling
+
 ## INSTALLATION 
 
 ```bash
@@ -29,7 +31,7 @@ cd dsh
 ## Build
 
 ```bash
-make
+make all
 ```
 
 ## Run
