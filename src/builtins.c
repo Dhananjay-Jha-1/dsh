@@ -35,7 +35,7 @@ void exec_cd(char* argv[])
     char cwd[256];
     char* directory = argv[1];
 
-    if(argv[1] == NULL)
+    if(argv[1] == NULL || strcmp(argv[1], "~") == 0)
     {
         char* home = getenv("HOME");
         int ret1 = chdir(home);
