@@ -2,6 +2,9 @@
 
 A simple UNIX shell written in C.
 
+## Screenshot
+![dsh demo][assets/dsh_v0.0.1_demo.png]
+
 ## Features
 
 * Execute external programs using `fork()`, `execvp()`, and `waitpid()`
