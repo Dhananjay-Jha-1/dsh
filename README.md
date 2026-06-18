@@ -87,3 +87,9 @@ include/
 * [ ] Quote handling
 * [ ] Tab completion
 
+## Release
+
+Current version : v0.0.1
+
+See all releases : 
+https://github.com/Dhananjay-Jha-1/dsh/releases
