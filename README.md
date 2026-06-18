@@ -13,6 +13,15 @@ A simple UNIX shell written in C.
   * `exit`
   * `fuckoff`
 * Basic error handling
+## INSTALLATION 
+
+```bash
+git clone https://github.com/Dhananjay-Jha-1/dsh.git
+```
+
+```bash
+cd dsh
+```
 
 ## Build
 
