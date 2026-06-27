@@ -4,6 +4,7 @@
 #include <sys/wait.h>
 
 #include "executor.h"
+#include "signals.h"
 
 int execute(int argc, char* argv[])
 {
@@ -15,7 +16,7 @@ int execute(int argc, char* argv[])
     
     pid_t pid;
     pid = fork();
-
+    
     if(pid == -1)
     {
         perror("fork failed");
@@ -24,7 +25,9 @@ int execute(int argc, char* argv[])
     else if(pid > 0)
     {
         //parent process
+        foreground_pid = pid;
         waitpid(pid, NULL, 0);
+        foreground_pid = -1;
     }
     else 
     {
