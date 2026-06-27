@@ -24,11 +24,22 @@ void start_shell(void)
         fflush(stdout);
 
         free(cwd);
-
-        // handling CTRL + D 
+        
+        // handling CTRL + D and CTRL + C 
         if(fgets(input, sizeof(input), stdin) == NULL)
         {
-            break;
+            // CTRL + D
+            if(feof(stdin))
+            {
+                break;
+            }
+
+            if(ferror(stdin))
+            {
+                clearerr(stdin);
+                printf("\n");
+                continue;
+            }
         }
 
         //now fgets also store the '\n' character i will have to remove it
