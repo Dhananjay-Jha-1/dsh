@@ -61,17 +61,18 @@ dsh> exit
 
 ```text
 src/
-├── main.c
-├── shell.c
-├── parser.c
+├── builtins.c
 ├── executor.c
-└── builtins.c
-
+├── main.c
+├── parser.c
+├── shell.c
+└── signals.c
 include/
-├── shell.h
-├── parser.h
+├── builtins.h
 ├── executor.h
-└── builtins.h
+├── parser.h
+├── shell.h
+└── signals.h
 ```
 
 ## Current Limitations

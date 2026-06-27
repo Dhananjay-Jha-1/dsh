@@ -33,8 +33,8 @@ int execute(int argc, char* argv[])
     {
         //child process when pid = 0
         execvp(argv[0], argv);
-
-        perror("command");
+        
+        perror( "\n dsh");
         exit(EXIT_FAILURE);
     }
 
