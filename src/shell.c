@@ -7,6 +7,7 @@
 #include "builtins.h"
 #include "parser.h"
 #include "executor.h"
+#include "lexer.h"
 
 #define ANSI_COLOR_GREEN   "\x1b[32m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
@@ -53,6 +54,9 @@ void start_shell(void)
                 break;
             }
         }
+        
+        lexer(input);
+        /*
         int argc = parse_input(input, argv);
         
         if(argc == 0)
@@ -61,5 +65,6 @@ void start_shell(void)
             exec_builtin(argv);
         else
             execute(argc, argv);
+            */
     }
 }
