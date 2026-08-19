@@ -1,6 +1,11 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-int parse_input(char* input, char *argv[]);
+#include "token.h"
+#include "command.h"
+
+Pipeline* parse(const Token* tokens);
+void free_command(Command* command);
+void free_pipeline(Pipeline* pipeline);
 
 #endif
