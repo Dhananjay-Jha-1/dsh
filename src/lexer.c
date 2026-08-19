@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "token.h"
+#include "lexer.h"
 
 #define MAX_TOKENS  128
 
